@@ -1,19 +1,13 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Interactive Week 3 and Week 4 learning lab for ITEC 300 – Computer Communications and Networking, Dr. Maher Alrahhal.">
-  <title>ITEC 300 | Networking Learning Lab</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e2945'/%3E%3Cpath d='M6 21h6V11h8v10h6' stroke='%234be3bf' stroke-width='3' fill='none'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="module" src="./app.js"></script>
-</head>
-<body>
-  <a class="skip" href="#main">Skip to learning content</a>
-  <header class="site-header"><a class="brand" href="#home"><span class="brand-symbol" aria-hidden="true">⌁</span><span>ITEC <strong>300</strong><small>NETWORKING LAB</small></span></a><nav aria-label="Main navigation" id="nav"></nav><button id="motion" class="quiet" aria-pressed="false">Pause animations</button></header>
-  <main id="main" tabindex="-1"></main>
-  <footer><span>ITEC 300 · Dr. Maher Alrahhal</span><span>Week 3 & 4 · Progress saved on this device</span></footer>
-  <div id="notice" class="sr-only" role="status"></div>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Interactive Week 3 and Week 4 learning lab for ITEC 300 – Computer Communications and Networking."><title>ITEC 300 | Networking Learning Lab</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e2945'/%3E%3Cpath d='M6 21h6V11h8v10h6' stroke='%234be3bf' stroke-width='3' fill='none'/%3E%3C/svg%3E"><link rel="stylesheet" href="./styles.css"><script type="module" src="./app.js"></script>
+<style>
+.poster-overview{max-width:1160px;margin:22px auto;padding:0 18px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#132c4a}.poster-overview h2{font-size:clamp(1.4rem,3vw,2rem);margin:0 0 8px}.poster-overview p{margin:0 0 16px;color:#52657d}.poster-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.poster-card{background:#fff;border:1px solid #d8e5f3;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px #183a5912}.poster-card h3{margin:0;padding:14px 16px;background:#0b4380;color:#fff;font-size:1.15rem}.poster-card img{display:block;width:100%;height:auto;cursor:zoom-in}.poster-card .poster-actions{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.poster-card a,.poster-card button{border:0;border-radius:9px;background:#e9f2ff;color:#123c7e;font:600 14px system-ui;padding:9px 13px;text-decoration:none;cursor:pointer}.poster-dialog{border:0;border-radius:16px;padding:14px;background:white;max-width:min(96vw,1100px);max-height:96vh;box-shadow:0 20px 90px #0006}.poster-dialog::backdrop{background:#07162dcc}.poster-dialog img{display:block;max-width:100%;max-height:86vh;object-fit:contain;margin:auto}.poster-dialog button{float:right;margin-bottom:8px;border:0;border-radius:8px;padding:8px 14px;cursor:pointer;background:#133d76;color:white}@media(max-width:720px){.poster-grid{grid-template-columns:1fr}}@media print{.poster-card{break-inside:avoid}.poster-actions{display:none}}
+</style></head><body>
+<a class="skip" href="#main">Skip to learning content</a><header class="site-header"><a class="brand" href="#home"><span class="brand-symbol" aria-hidden="true">⌁</span><span>ITEC <strong>300</strong><small>NETWORKING LAB</small></span></a><nav aria-label="Main navigation" id="nav"></nav><button id="motion" class="quiet" aria-pressed="false">Pause animations</button></header>
+<section class="poster-overview" id="posters" aria-labelledby="posters-title"><h2 id="posters-title">Week 3 &amp; Week 4 · Visual Overview</h2><p>Review the main concepts in each poster, then continue with the interactive learning activities below.</p><div class="poster-grid">
+<article class="poster-card"><h3>Week 3 · Circuits and Communication Media</h3><img src="./week3-poster.png" alt="Week 3 visual overview: network circuits, physical and logical circuits, point-to-point and multipoint, simplex and duplex communication, multiplexing, and guided and wireless media" loading="lazy" onclick="document.getElementById('poster3dialog').showModal()"><div class="poster-actions"><span>Circuits · Data flow · Media</span><button type="button" onclick="document.getElementById('poster3dialog').showModal()">Enlarge poster</button></div></article>
+<article class="poster-card"><h3>Week 4 · Analog and Digital Transmission</h3><img src="./week4-poster.png" alt="Week 4 visual overview: data and signals, analog versus digital, digital transmission, signal coding, modulation ASK FSK PSK, modems, and analog voice digitization" loading="lazy" onclick="document.getElementById('poster4dialog').showModal()"><div class="poster-actions"><span>Signals · Coding · Modulation</span><button type="button" onclick="document.getElementById('poster4dialog').showModal()">Enlarge poster</button></div></article>
+</div></section>
+<dialog class="poster-dialog" id="poster3dialog" onclick="if(event.target===this)this.close()"><button type="button" onclick="this.closest('dialog').close()">Close ×</button><img src="./week3-poster.png" alt="Enlarged Week 3 overview poster"></dialog>
+<dialog class="poster-dialog" id="poster4dialog" onclick="if(event.target===this)this.close()"><button type="button" onclick="this.closest('dialog').close()">Close ×</button><img src="./week4-poster.png" alt="Enlarged Week 4 overview poster"></dialog>
+<main id="main" tabindex="-1"></main><footer><span>ITEC 300 · Dr. Maher Alrahhal</span><span>Week 3 &amp; 4 · Progress saved on this device</span></footer><div id="notice" class="sr-only" role="status"></div></body></html>

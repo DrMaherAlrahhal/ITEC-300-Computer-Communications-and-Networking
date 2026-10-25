@@ -1,0 +1,1 @@
+Upload index.html, week3-poster.png and week4-poster.png to your existing Week-3-and-4 GitHub folder. Keep the original app.js, activities.js, course.js, demos.js, model.js and styles.css unchanged. Do not delete those files. This ZIP only contains the replacement index.html and the two poster images.
