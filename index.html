@@ -1,57 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ITEC 300 Computer Communications and Networking learning labs, revision, assignment and case study.">
   <title>ITEC 300 - Computer Communications and Networking</title>
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6fb;
-      color: #172b4d;
-    }
-    header {
-      background: #293b72;
-      color: white;
-      padding: 48px 20px;
-      text-align: center;
-    }
-    header h1 { margin: 0 0 12px; }
-    main {
-      max-width: 1100px;
-      margin: 35px auto;
-      padding: 0 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px #00000012;
-    }
-    .card h2 { margin-top: 0; }
-    .button {
-      display: inline-block;
-      background: #2563a6;
-      color: white;
-      padding: 11px 16px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f3f6fb; color: #172b4d; }
+    header { background: #293b72; color: white; padding: 48px 20px; text-align: center; }
+    header h1 { margin: 0 0 12px; font-size: 2.4rem; }
+    header h2 { margin: 0 0 12px; font-size: 1.45rem; }
+    header p { margin: 8px 0; }
+    main { max-width: 1100px; margin: 35px auto; padding: 0 20px; }
+    section { margin-bottom: 44px; }
+    .section-title { font-size: 1.45rem; margin: 0 0 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+    .card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 3px 12px #00000012; border-top: 3px solid #2563a6; display: flex; flex-direction: column; align-items: flex-start; min-height: 176px; }
+    .card h3 { margin: 0 0 12px; font-size: 1.13rem; }
+    .card p { margin: 0 0 16px; font-size: .91rem; line-height: 1.5; color: #415575; flex: 1; }
+    .button { display: inline-block; background: #2563a6; color: white; padding: 11px 16px; border-radius: 7px; text-decoration: none; font-weight: bold; font-size: .9rem; }
+    .button:hover, .button:focus-visible { background: #174d86; }
     .soon { color: #777; }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #667;
-    }
+    footer { text-align: center; padding: 30px; color: #667; }
+    @media (max-width: 550px) { header { padding: 35px 16px; } main { padding: 0 15px; } }
   </style>
 </head>
 <body>
@@ -63,62 +35,74 @@
   </header>
 
   <main>
-    <h2>Weekly Learning Activities</h2>
-    <div class="grid" id="weeks"></div>
+    <section aria-labelledby="resources-heading">
+      <h2 class="section-title" id="resources-heading">Revision, Assignment &amp; Case Study</h2>
+      <div class="grid" id="resources"></div>
+    </section>
+    <section aria-labelledby="weeks-heading">
+      <h2 class="section-title" id="weeks-heading">Weekly Learning Activities</h2>
+      <div class="grid" id="weeks"></div>
+    </section>
   </main>
 
-  <footer>
-    ITEC 300 | Computer Communications and Networking
-  </footer>
+  <footer>ITEC 300 | Computer Communications and Networking</footer>
 
   <script>
+    const resources = [
+      { title: "Revision for Quiz", description: "Review important concepts and practice questions for the quiz.", url: "./Revision-for-Quiz/index.html", button: "Open Quiz Revision" },
+      { title: "Revision for Midterm", description: "Practice questions and explanations from Weeks 1–7.", url: "./Revision-for-Midterm/index.html", button: "Open Midterm Revision" },
+      { title: "Assignment", description: "View assignment instructions and learning activities.", url: "./Assignment/index.html", button: "Open Assignment" },
+      { title: "Case Study", description: "Explore practical networking scenarios and case study activities.", url: "./Case-Study/index.html", button: "Open Case Study" },
+      { title: "Revision for Final", description: "Prepare for the final examination with revision materials.", url: "./Revision-for-Final/index.html", button: "Open Final Revision" }
+    ];
 
-const labs = [
-  { title: "Week 1", url: "./Week-1/index.html" },
-  { title: "Week 2", url: "./Week-2/index.html" },
-  {
-    title: "Weeks 3 & 4",
-    url: "./Week-3-and-4/index.html"
-  },
-  { title: "Week 5", url: "./Week-5/index.html" },
-  { title: "Week 6", url: "./Week-6/index.html" },
-  { title: "Week 7", url: "./Week-7/index.html" },
-  { title: "Week 8", url: "./Week-8/index.html" },
-  { title: "Week 9", url: "./Week-9/index.html" },
-  { title: "Week 10", url: "./Week-10/index.html" },
-  { title: "Week 11", url: "./Week-11/index.html" },
-  { title: "Week 12", url: "./Week-12/index.html" },
-  { title: "Week 13", url: "./Week-13/index.html" },
-  { title: "Week 14", url: "./Week-14/index.html" },
-  { title: "Week 15", url: "./Week-15/index.html" }
-];
+    const labs = [
+      { title: "Week 1", url: "./Week-1/index.html" },
+      { title: "Week 2", url: "./Week-2/index.html" },
+      { title: "Weeks 3 & 4", url: "./Week-3-and-4/index.html" },
+      { title: "Week 5", url: "./Week-5/index.html" },
+      { title: "Week 6", url: "./Week-6/index.html" },
+      { title: "Week 7", url: "./Week-7/index.html" },
+      { title: "Week 8", url: "./Week-8/index.html" },
+      { title: "Week 9", url: "./Week-9/index.html" },
+      { title: "Week 10", url: "./Week-10/index.html" },
+      { title: "Week 11", url: "./Week-11/index.html" },
+      { title: "Week 12", url: "./Week-12/index.html" },
+      { title: "Week 13", url: "./Week-13/index.html" },
+      { title: "Week 14", url: "./Week-14/index.html" },
+      { title: "Week 15", url: "./Week-15/index.html" }
+    ];
 
-
-    const container = document.getElementById("weeks");
-
-    labs.forEach(lab => {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const title = document.createElement("h2");
-      title.textContent = lab.title;
-      card.appendChild(title);
-
-      if (lab.url) {
-        const link = document.createElement("a");
-        link.className = "button";
-        link.href = lab.url;
-        link.textContent = "Open Learning Lab";
-        card.appendChild(link);
-      } else {
-        const message = document.createElement("p");
-        message.className = "soon";
-        message.textContent = "Coming Soon";
-        card.appendChild(message);
-      }
-
-      container.appendChild(card);
-    });
+    function renderCards(containerId, items, defaultButton) {
+      const container = document.getElementById(containerId);
+      items.forEach(item => {
+        const card = document.createElement("article");
+        card.className = "card";
+        const title = document.createElement("h3");
+        title.textContent = item.title;
+        card.appendChild(title);
+        if (item.description) {
+          const description = document.createElement("p");
+          description.textContent = item.description;
+          card.appendChild(description);
+        }
+        if (item.url) {
+          const link = document.createElement("a");
+          link.className = "button";
+          link.href = item.url;
+          link.textContent = item.button || defaultButton;
+          card.appendChild(link);
+        } else {
+          const message = document.createElement("p");
+          message.className = "soon";
+          message.textContent = "Coming Soon";
+          card.appendChild(message);
+        }
+        container.appendChild(card);
+      });
+    }
+    renderCards("resources", resources, "Open Resource");
+    renderCards("weeks", labs, "Open Learning Lab");
   </script>
 </body>
 </html>
